@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt Ol</title>
+</head>
+<body>
+    <h1>Kayıt Ol</h1>
+    <% if (error) { %>
+        <p style="color: red;"><%= error %></p>
+    <% } %>
+    <form action="/register" method="POST">
+        <input type="text" name="username" placeholder="Kullanıcı Adı" required>
+        <input type="password" name="password" placeholder="Şifre" required>
+        <input type="text" name="company" placeholder="Şirket Adı" required>
+        <button type="submit">Kayıt Ol</button>
+    </form>
+    <p>Zaten hesabınız var mı? <a href="/login">Giriş Yap</a></p>
+</body>
+</html>

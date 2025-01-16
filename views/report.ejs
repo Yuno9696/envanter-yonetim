@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raporlama</title>
+</head>
+<body>
+    <h1>Gruplara Göre Malzeme Raporu</h1>
+    <a href="/">Ana Sayfa</a> | <a href="/logout">Çıkış Yap</a>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Grup Adı</th>
+                <th>Toplam Malzeme Miktarı</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% report.forEach(item => { %>
+                <tr>
+                    <td><%= item._id %></td>
+                    <td><%= item.totalQuantity %></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>

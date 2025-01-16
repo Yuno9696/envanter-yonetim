@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arama Sonuçları</title>
+</head>
+<body>
+    <h1>Arama Sonuçları</h1>
+    <a href="/">Ana Sayfaya Dön</a>
+
+    <% if (results.length > 0) { %>
+        <ul>
+            <% results.forEach(result => { %>
+                <li>
+                    <strong><%= result.name %></strong> - <%= result.quantity %> adet 
+                    (Marka: <%= result.brand %>, Grup: <%= result.group %>, Barkod: <%= result.barcode || 'Yok' %>)
+                </li>
+            <% }); %>
+        </ul>
+    <% } else { %>
+        <p>"<%= query %>" ile ilgili bir sonuç bulunamadı.</p>
+    <% } %>
+</body>
+</html>
